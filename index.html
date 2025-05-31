@@ -5,11 +5,29 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="themes.css">
+    <!-- theme txt colors -->
+    <link rel="stylesheet" href="css/style-1.css" class="theme-txt-color" title="color-1" disabled>
+    <link rel="stylesheet" href="css/style-2.css" class="theme-txt-color" title="color-2" disabled>
+    <link rel="stylesheet" href="css/style-3.css" class="theme-txt-color" title="color-3" disabled>
+    <link rel="stylesheet" href="css/style-4.css" class="theme-txt-color" title="color-4" disabled>
+    <link rel="stylesheet" href="css/style-5.css" class="theme-txt-color" title="color-5" disabled>
     <title>Document</title>
 </head>
 
 <body>
     <div class="aside">
+        <div class="nav-toggler">
+            <div class="hambuger">
+                <span></span>
+                <span></span>
+                <span></span>
+            </div>
+            <div class="inverted-cross">
+                <span class="one"></span>
+                <span class="two"></span>
+            </div>
+        </div>
         <div class="logo">
             <a href="#">
                 <p><span>C</span>alli505</p>
@@ -17,33 +35,34 @@
         </div>
         <div class="nav">
             <ul>
-                <li><a href="#" class="active">Home</a></li>
-                <li><a href="#">About</a></li>
-                <li><a href="#">Services</a></li>
-                <li><a href="#">Portfolio</a></li>
-                <li><a href="#">Contact</a></li>
+                <li><a href="#home" class="nav-link">Home</a></li>
+                <li><a href="#about" class="nav-link">About</a></li>
+                <li><a href="#service" class="nav-link">Services</a></li>
+                <li><a href="#portfolio" class="nav-link">Portfolio</a></li>
+                <li><a href="#contact" class="nav-link">Contact</a></li>
             </ul>
         </div>
     </div>
     <div class="main-container">
-        <div class="container">
+        <div class="container active" id="home">
             <div class="home">
                 <div class="column home-left">
                     <h2 class="title">Hello, My Name is <span>Callistus Ngeywa</span></h2>
                     <h2 class="sub-title">I am a <span>Web Designer</span></h2>
                     <p class="txt">
-                        I am a Web Designer with extensive experience for over 5years
+                        I am a Web Designer with extensive experience for over 2years
                         my expertise is web design, graphic design and many more...
                     </p>
                     <a href="#" class="btn">Hire Me</a>
                 </div>
                 <div class="column home-right">
-                    <img src="images/asabeneh.jpg" alt="asabeneh" height="400" width="400">
+                    <img src="images/canon-profile-1.png" alt="canon-profile-1" height="400" width="400">
                 </div>
             </div>
+            <div class="clearflix"></div>
         </div>
-        <div class="clearflix"></div>
-        <div class="container">
+
+        <div class="container" id="about">
             <div>
                 <div class="header">
                     About Me
@@ -51,21 +70,368 @@
             </div>
             <div class="about">
                 <div class="about-top">
-                    <p class="intro">I'm Callistus Ngeywa <span>I am a Web Developer</span></p>
+                    <h2 class="intro">I'm Callistus Ngeywa I am a <span>Web Developer</span></h2>
                     <div class="txt">
-                        Lorem ipsum dolor sit amet consectetur adipisicing elit. Tempora magni perspiciatis culpa enim, 
-                        aut reprehenderit dolor voluptate veniam consectetur doloribus. Doloribus quibusdam corrupti eos 
-                        saepe ea sit iure rerum ducimus.
+                        I have honed my skills as a web developer and graphic designer, enabling me
+                        to design and implement user-friendly websites and create compelling visual content.
+                        My technical proficiency includes HTML, CSS, JavaScript, React, and backend tools such as
+                        Node.js and MongoDB.
+                        I am also proficient in graphic tools like Adobe Illustrator and Photoshop. Below are just but a
+                        few info about Me.
                     </div>
                     <div class="data">
-                        <div class="column left"></div>
-                        <div class="column right"></div>
+                        <div class="column left">
+                            <div class="left-inside">
+                                <div>
+                                    <p><span class="data-head">Birthday: </span> <span class="data-body">04 Jan
+                                            2000</span>
+                                    </p>
+                                    <p><span class="data-head">Website: </span> <span
+                                            class="data-body">www.domain.com</span>
+                                    </p>
+                                    <p><span class="data-head">Degree: </span> <span class="data-body">CS</span>
+                                    </p>
+                                    <p><span class="data-head">City: </span> <span class="data-body">Nairobi</span>
+                                    </p>
+                                </div>
+                                <div>
+                                    <p><span class="data-head">Age: </span> <span class="data-body">25</span>
+                                    </p>
+                                    <p><span class="data-head">Email: </span> <span
+                                            class="data-body">callistusngeywa@gmail.com</span>
+                                    </p>
+                                    <p><span class="data-head">Phone: </span> <span class="data-body">+254 759 319
+                                            378</span>
+                                    </p>
+                                    <p><span class="data-head">Freelance: </span> <span
+                                            class="data-body">Available</span>
+                                    </p>
+                                </div>
+                            </div>
+                            <div class="cv-hire">
+                                <a href="#" class="btn btn-cv">Download CV</a>
+                                <a href="#" class="btn">Hire Me</a>
+                            </div>
+                        </div>
+                        <div class="column right">
+                            <div class="language-stat">
+                                <div class="language">CSS</div>
+                                <div class="percentage">
+                                    <div class="percentage-in" style="width: 96%;"></div>
+                                    <div class="percentage-value">96%</div>
+                                </div>
+                            </div>
+                            <div class="language-stat">
+                                <div class="language">JS</div>
+                                <div class="percentage">
+                                    <div class="percentage-in" style="width: 76%;"></div>
+                                    <div class="percentage-value">76%</div>
+                                </div>
+                            </div>
+                            <div class="language-stat">
+                                <div class="language">HTML</div>
+                                <div class="percentage">
+                                    <div class="percentage-in" style="width: 90%;"></div>
+                                    <div class="percentage-value">90%</div>
+                                </div>
+                            </div>
+                            <div class="language-stat">
+                                <div class="language">REACTJS</div>
+                                <div class="percentage">
+                                    <div class="percentage-in" style="width: 79%;"></div>
+                                    <div class="percentage-value">79%</div>
+                                </div>
+                            </div>
+                            <div class="language-stat">
+                                <div class="language">Tailwind CSS</div>
+                                <div class="percentage">
+                                    <div class="percentage-in" style="width: 92%;"></div>
+                                    <div class="percentage-value">92%</div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="clearflix"></div>
+                </div>
+                <div class="about-bottom">
+                    <div class="row">
+                        <div class="column left">
+                            <div class="title">Education</div>
+                            <div class="content">
+                                <div class="card">
+                                    <p class="period">2019 - 2024</p>
+                                    <h2>Degree In Computer Science</h2>
+                                    <div class="txt">
+                                        <p class="bold"><span>Institution: </span> The East African University. </p>
+                                        <p class="bold"><span>Grade Attained: </span> Second Class Upper Division. </p>
+                                    </div>
+                                </div>
+                                <div class="card">
+                                    <p class="period">2015 - 2018</p>
+                                    <h2>KCSE Certificate</h2>
+                                    <div class="txt">
+                                        <p class="bold"><span>Institution: </span> St. Anthoney's Boys Highschool -
+                                            Kitale. </p>
+                                        <p class="bold"><span>Grade Attained: </span> B. </p>
+                                    </div>
+                                </div>
+                                <div class="card">
+                                    <p class="period">2007 - 2014</p>
+                                    <h2>KCPE Certificate</h2>
+                                    <div class="txt">
+                                        <p class="bold"><span>Institution: </span> Kitale Primary School. </p>
+                                        <p class="bold"><span>Grade Attained: </span> 369. </p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="column right">
+                            <div class="title">Experience</div>
+                            <div class="content">
+                                <div class="card">
+                                    <p class="period">July 2023 - current</p>
+                                    <h2>Freelance UX / Graphic Designer</h2>
+                                    <div class="txt">
+                                        <ul class="tasks">
+                                            <li>Build reusable components using ReactJs </li>
+                                            <li>Implement state management tools like Redux or React Context in my
+                                                workflow. </li>
+                                            <li>Convert Figma/Adobe XD designs into responsive web page. </li>
+                                        </ul>
+                                    </div>
+                                </div>
+                                <div class="card">
+                                    <p class="period">January 2023 – July 2023</p>
+                                    <h2>Junior Developer / Attache</h2>
+                                    <div class="txt">
+                                        <ul class="tasks">
+                                            <li>Test UI elements manually for responsiveness and interactivity. </li>
+                                            <li>Write simple unit tests for components using Jest or React Testing
+                                                Library. </li>
+                                            <li>Debug layout issues using browser developer tools. </li>
+                                        </ul>
+                                    </div>
+                                </div>
+                                <div class="card">
+                                    <p class="period">2022 – January 2023</p>
+                                    <h2>Graphic Design Freelance</h2>
+                                    <div class="txt">
+                                        <ul class="tasks">
+                                            <li>Designed marketing materials (brochures, flyers, social media content)
+                                                for small businesses. </li>
+                                            <li>Assisted businesses in visual branding, contributing to customer
+                                                engagement and product
+                                                promotion. </li>
+                                        </ul>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
                     </div>
                 </div>
-                <div class="about-bottom"></div>
+            </div>
+        </div>
+        <div class="container" id="service">
+            <div class="service-container">
+                <div class="header">
+                    Services
+                </div>
+                <div class="row">
+                    <div class="services">
+                        <div class="service-card">
+                            <div class="service-inner">
+                                <div class="icon"></div>
+                                <h2 class="title">Frontend Design</h2>
+                                <p>
+                                    I Design and create compelling websites using HTML, CSS and JavaScript. I also embrace 
+                                    frameworks and libraries such as ReactJs for reusable components and Tailwind CSS for styling.
+                                </p>
+                            </div>
+                        </div>
+                        <div class="service-card">
+                            <div class="service-inner">
+                                <div class="icon"></div>
+                                <h2 class="title">Database Management</h2>
+                                <p>
+                                    Flexible when working with both SQL and NoSQL such as MongoDB.
+                                </p>
+                            </div>
+                        </div>
+                        <div class="service-card">
+                            <div class="service-inner">
+                                <div class="icon"></div>
+                                <h2 class="title">Backend Design</h2>
+                                <p>
+                                    Knowledgeble in creating backend API's using NodeJs, Express.
+                                </p>
+                            </div>
+                        </div>
+                        <div class="service-card">
+                            <div class="service-inner">
+                                <div class="icon"></div>
+                                <h2 class="title">Android Development</h2>
+                                <p>
+                                    Knowledgeble on developing Android Apps using Kotlin.
+                                </p>
+                            </div>
+                        </div>
+                        <div class="service-card">
+                            <div class="service-inner">
+                                <div class="icon"></div>
+                                <h2 class="title">Video Editing</h2>
+                                <p>
+                                    Creative video editor and animator. Knowlegeble about Davinci Pro video editing tool.
+                                </p>
+                            </div>
+                        </div>
+                        <div class="service-card">
+                            <div class="service-inner">
+                                <div class="icon"></div>
+                                <h2 class="title">Graphic Design</h2>
+                                <p>
+                                    Skilled in developing marketing
+                                    materials that resonate with target audiences. Strong ability to build relationships, understand client
+                                    needs, and drive sales through innovative strategies
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="container" id="portfolio">
+            <div class="portfolio-container">
+                <div class="header">
+                    Portfolio
+                </div>
+                <h3 class="sub-title">My Last Projects:</h3>
+                <div class="row projects">
+                    <div class="project">
+                        <div class="project-inner one">
+                            <!-- <img src="images/CONCEPT BIKE.jpeg" alt="CONCEPT" class="image"> -->
+                        </div>
+                    </div>
+                    <div class="project">
+                        <div class="project-inner">
+                            <img src="images/asabeneh.jpg" alt="asabeneh" class="image">
+                        </div>
+                    </div>
+                    <div class="project">
+                        <div class="project-inner">
+                            <img src="images/dumbell.jpeg" alt="dumbell" class="image">
+                        </div>
+                    </div>
+                    <div class="project">
+                        <div class="project-inner">
+                            <img src="images/pain.jpeg" alt="pain" class="image">
+                        </div>
+                    </div>
+                    <div class="project">
+                        <div class="project-inner">
+                            <img src="images/run.jpeg" alt="run" class="image">
+                        </div>
+                    </div>
+                    <div class="project">
+                        <div class="project-inner">
+                            <img src="images/proud.jpeg" alt="proud" class="image">
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="container" id="contact">
+            <div class="contact-container">
+                <div class="header">
+                    Contact Me
+                </div>
+                <div class="row row-center">
+                    <div class="title">Have You Any Questions?</div>
+                    <div class="sub-title">I'M AT YOUR SERVICES.</div>
+                </div>
+                <div class="row contacts">
+                    <div class="contact">
+                        <div class="icon"></div>
+                        <h4>Call Us On</h4>
+                        <p>+254 759 319 378</p>
+                    </div>
+                    <div class="contact">
+                        <div class="icon"></div>
+                        <h4>Office</h4>
+                        <p>Nairobi</p>
+                    </div>
+                    <div class="contact">
+                        <div class="icon"></div>
+                        <h4>Email</h4>
+                        <p>callistusngeywa@gmail.com</p>
+                    </div>
+                    <div class="contact">
+                        <div class="icon"></div>
+                        <h4>Website</h4>
+                        <p>www.dormain.com</p>
+                    </div>
+                </div>
+                <div class="row row-center">
+                    <div class="title">SEND ME AN EMAIL</div>
+                    <div class="sub-title">I AM VERY RESPONSIVE TO MESSAGES</div>
+                </div>
+                <div class="row">
+                    <div class="contact-form">
+                        <div class="row">
+                            <div class="form-item col-6">
+                                <div class="form-group">
+                                    <input type="text" class="form-control" placeholder="Name">
+                                </div>
+                            </div>
+                            <div class="form-item col-6">
+                                <div class="form-group">
+                                    <input type="email" class="form-control" placeholder="Email">
+                                </div>
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="form-item col-12">
+                                <div class="form-group">
+                                    <input type="text" class="form-control" placeholder="Subject">
+                                </div>
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="form-item col-12">
+                                <div class="form-group">
+                                    <textarea name="para" id="para" class="form-control"
+                                        placeholder="Message..."></textarea>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="form-item">
+                                <button class="btn">Submit Message</button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
             </div>
         </div>
     </div>
+    <div class="page-themes">
+        <div class="togglers">
+            <div class="toggler main-txt-toggler"></div>
+            <div class="toggler background-toggler"></div>
+        </div>
+        <div class="txt-colors">
+            <h3>Theme color</h3>
+            <div class="colors">
+                <span class="color-1" onclick="changeTxtColor('color-1')"></span>
+                <span class="color-2" onclick="changeTxtColor('color-2')"></span>
+                <span class="color-3" onclick="changeTxtColor('color-3')"></span>
+                <span class="color-4" onclick="changeTxtColor('color-4')"></span>
+                <span class="color-5" onclick="changeTxtColor('color-5')"></span>
+            </div>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+    <script src="script-1.js"></script>
 </body>
 
 </html>

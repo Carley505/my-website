@@ -1,0 +1,79 @@
+
+/* ======== Page Themes ========= */
+.page-themes{
+    position: fixed;
+    top: 60px;
+    right: 0;
+    background-color: white;
+    padding: 0.5rem;
+    z-index: 101;
+    height: fit-content;
+    transition: all 0.3s ease;
+    transform: translateX(100%);
+}
+.page-themes.open{
+    transform: translateX(-25%);
+}
+
+.page-themes .togglers{
+    position: absolute;
+    right: 110%;
+    top: 0;
+}
+
+.page-themes .toggler{
+    height: 20px;
+    width: 20px;
+    border-radius: 50%;
+}
+
+.page-themes .main-txt-toggler{
+    background-color: red;
+}
+
+.page-themes .background-toggler{
+    background-color: green;
+    margin-top: 0.3rem;
+}
+
+/* .page-themes .txt-colors h3{
+    margin-bottom: 0.5rem;
+} */
+
+.page-themes .colors{
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    border-top: 2px solid var(--clr-dark-4);
+}
+
+.page-themes .colors span{
+    display: inline-block;
+    /* width: 20px;
+    height: 20x; */
+    padding: 0.8rem;
+    border: 1px solid black;
+    background-color: red;
+    border-radius: 50%;
+    margin: 0.5rem 0.2rem 0 0;
+}
+
+.page-themes .colors .color-1{
+    background-color: #a307b1;
+}
+
+.page-themes .colors .color-2{
+    background-color: #07b18c;
+}
+
+.page-themes .colors .color-3{
+    background-color: #29b107;
+}
+
+.page-themes .colors .color-4{
+    background-color: #b16707;
+}
+
+.page-themes .colors .color-5{
+    background-color: #b10707;
+}
