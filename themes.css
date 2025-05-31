@@ -25,14 +25,21 @@
     height: 20px;
     width: 20px;
     border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
 }
 
+.page-themes .toggler i{
+    font-size: 18px;
+    color: var(--clr-dark-1);
+}
 .page-themes .main-txt-toggler{
-    background-color: red;
+    background-color: transparent;
 }
 
 .page-themes .background-toggler{
-    background-color: green;
+    background-color: transparent;
     margin-top: 0.3rem;
 }
 

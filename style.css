@@ -258,6 +258,12 @@ h2 {
   margin-bottom: 1.2rem;
 }
 
+.nav ul a i{
+  font-size: 16px;
+  margin-right: 5px;
+  color: var(--clr-red-main);
+}
+
 .nav ul a.active {
   color: var(--clr-red-main);
 }
@@ -559,18 +565,44 @@ h2 {
 .portfolio-container {
   color: var(--clr-dark-2);
 }
+
+.projects .project a:hover{
+  text-decoration: none;
+}
+
 .projects .project .project-inner {
   width: 100%;
   height: 250px;
-  background-color: white;
   padding: 0.5rem;
   border-radius: 5px;
   box-shadow: var(--box-shadow-main);
+  background: url(images/CONCEPT\ BIKE.jpeg);
+  background-size: cover;
+  background-color: white;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  opacity: 0.7;
+  transition: all 0.3s ease;
 }
 
-.projects .project .project-inner.one{
-  background: url(images/CONCEPT\ BIKE.jpeg);
-  object-fit: contain;
+.projects .project .project-inner:hover{
+  opacity: 1;
+}
+
+.projects .project .project-inner .title{
+  color: var(--bg-clr-light-1);
+  font-size: 18px;
+  font-weight: 600;
+  opacity: 1;
+  padding: 10px;
+  border-radius: 10px;
+}
+
+.projects .project .project-inner .title:hover{
+  background-color: white;
+  opacity: 0.8;
+  color: var(--clr-dark-1);
 }
 
 .projects .project {
