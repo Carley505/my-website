@@ -636,7 +636,7 @@ h2 {
 }
 
 .projects .project .project-inner:hover .title{
-  background-color: white;
+  background-color: var(--bg-clr-light-1);
   opacity: 0.8;
   color: var(--clr-dark-1);
 }
