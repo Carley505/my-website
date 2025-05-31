@@ -22,8 +22,9 @@
 }
 
 .page-themes .toggler{
-    height: 20px;
-    width: 20px;
+    height: 40px;
+    width: 40px;
+    padding: px;
     border-radius: 50%;
     display: flex;
     align-items: center;
@@ -31,15 +32,15 @@
 }
 
 .page-themes .toggler i{
-    font-size: 18px;
+    font-size: 28px;
     color: var(--clr-dark-1);
 }
 .page-themes .main-txt-toggler{
-    background-color: transparent;
+    background-color: var(--bg-clr-light-1);
 }
 
 .page-themes .background-toggler{
-    background-color: transparent;
+    background-color: var(--bg-clr-light-1);
     margin-top: 0.3rem;
 }
 

@@ -8,14 +8,32 @@ const aside = document.querySelector(".aside");
 const containers = document.querySelectorAll(".container");
 
 myNavLinks.forEach((link) => {
-  link.addEventListener("click", (e) => {
+ selectSection(link);
+});
+
+function selectSection(link){
+   link.addEventListener("click", (e) => {
     myNavLinks.forEach((link) => {
       link.classList.remove("active");
     });
     e.target.classList.add("active");
     addContainer(e.target);
   });
+}
+
+function updateNav(element){
+  myNavLinks.forEach((link) => {
+   link.classList.remove("active");
 });
+const target = element;
+console.log(target)
+}
+
+document.querySelector(".hire-me").addEventListener("click", (e)=>{
+  const target = e.target.getAttribute("href").split("#")[1];
+
+  updateNav(target);
+})
 
 // open close Aside/Nav when on smaller screens
 

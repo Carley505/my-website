@@ -576,14 +576,48 @@ h2 {
   padding: 0.5rem;
   border-radius: 5px;
   box-shadow: var(--box-shadow-main);
-  background: url(images/CONCEPT\ BIKE.jpeg);
-  background-size: cover;
-  background-color: white;
   display: flex;
   align-items: center;
   justify-content: center;
   opacity: 0.7;
   transition: all 0.3s ease;
+}
+
+.projects .project .project-inner.one{
+  background: url(images/CONCEPT\ BIKE.jpeg);
+  background-size: cover;
+  background-color: white;
+}
+
+.projects .project .project-inner.two{
+  background: url(images/Mandala-pattern-7-back-cpo.png);
+  background-size: cover;
+  background-color: white;
+}
+
+.projects .project .project-inner.three{
+  background: url(images/canon-profile-1.png);
+  background-size: cover;
+  background-color: white;
+  filter: grayscale(100%);
+}
+
+.projects .project .project-inner.four{
+  background: url(images/PROTO-01.png);
+  background-size: cover;
+  background-color: white;
+}
+
+.projects .project .project-inner.five{
+  background: url(images/GitHub.jpeg);
+  background-size: cover;
+  background-color: white;
+}
+
+.projects .project .project-inner.six{
+  background: url(images/linkedin.jpeg);
+  background-size: cover;
+  background-color: white;
 }
 
 .projects .project .project-inner:hover{
@@ -596,10 +630,12 @@ h2 {
   font-weight: 600;
   opacity: 1;
   padding: 10px;
+  text-align: center;
   border-radius: 10px;
+  transition: all 0.3s ease;
 }
 
-.projects .project .project-inner .title:hover{
+.projects .project .project-inner:hover .title{
   background-color: white;
   opacity: 0.8;
   color: var(--clr-dark-1);
