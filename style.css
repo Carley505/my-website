@@ -552,6 +552,22 @@ h2 {
   background-color: var(--clr-red-main);
 }
 
+.services .service-card .icon {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.services .service-card .icon i {
+  color: var(--clr-dark-2);
+  font-size: 20px;
+}
+
+.services .service-card:hover i {
+  color: var(--bg-clr-light-1);
+  transition: all 0.5s ease;
+}
+
 .services .service-card .title {
   font-size: 18px;
   color: var(--clr-dark-2);
@@ -688,10 +704,11 @@ h2 {
   color: var(--clr-dark-1);
 }
 
-.contact-container .contacts .contact .icon {
+.contact-container .contacts .contact i {
+  font-size: 30px;
   height: 20px;
   width: 20px;
-  background-color: var(--clr-red-main);
+  color: var(--clr-dark-3);
   margin: 1rem auto;
 }
 

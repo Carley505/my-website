@@ -56,4 +56,30 @@ function addContainer(ele) {
     item.classList.remove("active");
   });
   document.querySelector("#" + target).classList.add("active");
+  
 }
+
+const hireMe = document.querySelectorAll(".hire-me");
+hireMe.forEach((btn) => {
+  btn.addEventListener("click", (e) => {
+    e.preventDefault();
+    addContainer(btn);
+    updateNav(btn);
+  });
+});
+
+
+
+// Download CV functionality
+const cvBtn = document.querySelector(".btn-cv");
+cvBtn.addEventListener("click", (e) => {
+  e.preventDefault();
+  // Add your CV download logic here
+  const cvLink = "./files/CALLISTUS-NGEYWA-Resume.pdf"; // Replace with your CV file path
+  const link = document.createElement("a");
+  link.href = cvLink;
+  link.download = "Ngeywa_CV.pdf"; // Replace with your CV file name
+  document.body.appendChild(link);
+  link.click();
+  document.body.removeChild(link);
+});
