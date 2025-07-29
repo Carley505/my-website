@@ -65,6 +65,13 @@ hireMe.forEach((btn) => {
     e.preventDefault();
     addContainer(btn);
     updateNav(btn);
+    // Scroll to the contact form after showing the contact section
+    setTimeout(() => {
+      const contactForm = document.querySelector("#contact form");
+      if (contactForm) {
+      contactForm.scrollIntoView({ behavior: "smooth" });
+      }
+    }, 100); // Delay to ensure section is visible
   });
 });
 
