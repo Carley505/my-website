@@ -17,6 +17,13 @@ function selectSection(link){
       link.classList.remove("active");
     });
     e.target.classList.add("active");
+    aside.classList.remove("show");
+    navToggler.classList.remove("open");
+    containers.forEach((container) => {
+      container.classList.remove("overlay");
+      container.style.pointerEvents = "";
+      container.style.filter = "";
+    });
     addContainer(e.target);
   });
 }
@@ -42,9 +49,13 @@ navToggler.addEventListener("click", () => {
   navToggler.classList.toggle("open");
   containers.forEach((container) => {
     if (aside.classList.contains("show")) {
-      container.classList.add("open");
+      container.classList.add("overlay");
+      container.style.pointerEvents = "none";
+      container.style.filter = "blur(2px)";
     } else {
-      container.classList.remove("open");
+      container.classList.remove("overlay");
+      container.style.pointerEvents = "";
+      container.style.filter = "";
     }
   });
 });
