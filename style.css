@@ -164,8 +164,8 @@ h2 {
   width: 40px;
   background-color: transparent;
   position: fixed;
-  top: 2%;
-  left: 2%;
+  top: 10px;
+  left: 5px;
   z-index: 110;
   border: 1px solid var(--clr-dark-4);
   padding: 2px;
@@ -981,7 +981,7 @@ h2 {
 
   /* Hamburger toggler — visible on left when sidebar closed */
   .aside .nav-toggler {
-    left: 30px;
+    left: 5px;
     display: block;
   }
 
