@@ -1,6 +1,6 @@
 // --- Typewriter Effect ---
 const typingElement = document.querySelector(".typing");
-const roles = ["AI & Automation Expert", "Graphic Designer", "UI/UX Specialist", "Web Developer"];
+const roles = ["AI & Automation", "Graphic Design", "UI/UX Design", "Web Development"];
 let roleIndex = 0;
 let charIndex = 0;
 let isDeleting = false;
