@@ -506,7 +506,9 @@ h2 {
 }
 
 @keyframes fillBar {
-  from { width: 0 !important; }
+  from {
+    width: 0 !important;
+  }
 }
 
 .percentage-value {
@@ -945,10 +947,25 @@ h2 {
 @media (max-width: 1070px) {
   .aside {
     left: -270px;
+    justify-content: flex-start;
+    padding-top: 2rem;
   }
 
   .aside.show {
     transform: translateX(100%);
+  }
+
+  /* Logo — position at top of sidebar, not fixed */
+  .aside.show .logo {
+    position: relative;
+    top: 45px;
+    margin-bottom: 3rem;
+  }
+
+  /* Nav — push down below logo */
+  .aside.show .nav {
+    margin-top: 1.5rem;
+    width: 80%;
   }
 
   .container {
@@ -962,14 +979,18 @@ h2 {
     left: 270px;
   }
 
-  /* Hamburger toggler visible */
+  /* Hamburger toggler — visible on left when sidebar closed */
   .aside .nav-toggler {
     left: 30px;
     display: block;
   }
 
+  /* Close icon — top-right INSIDE the sidebar */
   .aside .nav-toggler.open {
-    left: 300px;
+    left: auto;
+    right: 10px;
+    top: 10px;
+    position: absolute;
   }
 
   .aside .nav-toggler.open .hambuger {
@@ -990,6 +1011,7 @@ h2 {
 
 /* ---------- Tablet Portrait / Large Phones (≤ 880px) ---------- */
 @media (max-width: 880px) {
+
   /* Home hero — stack columns */
   .home .column {
     float: none;
@@ -1080,6 +1102,7 @@ h2 {
 
 /* ---------- Small Tablets / Large Phones (≤ 630px) ---------- */
 @media (max-width: 630px) {
+
   /* Education / Experience — stack vertically */
   .about-bottom .row {
     flex-direction: column;
