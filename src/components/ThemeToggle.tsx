@@ -79,18 +79,71 @@ export const ThemeToggle: React.FC<{ isMobile?: boolean }> = ({ isMobile = false
 
   const activeThemeObj = themeOptions.find((t) => t.id === currentTheme) || themeOptions[0];
 
+  // Mobile Drawer Embedded Layout (Spacious, zero clipping, perfect checkmark alignment)
+  if (isMobile) {
+    return (
+      <div className="w-full space-y-2 bg-brand-bg/40 p-3 rounded-2xl border border-brand-border/80">
+        <div className="flex items-center justify-between px-1 mb-1">
+          <span className="text-[10px] font-mono text-brand-muted uppercase tracking-wider">Select Theme Palette</span>
+          <span className="text-[10px] font-mono text-brand-teal font-bold px-1.5 py-0.5 rounded bg-brand-teal/10">4 Themes</span>
+        </div>
+
+        <div className="space-y-1.5">
+          {themeOptions.map((theme) => {
+            const isSelected = currentTheme === theme.id;
+            const Icon = theme.icon;
+
+            return (
+              <button
+                key={theme.id}
+                onClick={() => handleSelectTheme(theme.id)}
+                className={`w-full flex items-center justify-between p-2.5 rounded-xl text-left transition-all ${
+                  isSelected
+                    ? 'bg-brand-surface border border-brand-teal text-brand-teal font-semibold shadow-md'
+                    : 'bg-brand-surface/40 hover:bg-brand-surface border border-brand-border/40 text-brand-text'
+                }`}
+              >
+                <div className="flex items-center gap-2.5 min-w-0">
+                  <div
+                    className="w-7 h-7 rounded-lg flex items-center justify-center border border-brand-border/80 shadow-sm flex-shrink-0"
+                    style={{ backgroundColor: theme.bgHex }}
+                  >
+                    <Icon className="w-3.5 h-3.5" style={{ color: theme.accentTeal }} />
+                  </div>
+                  <div className="min-w-0">
+                    <div className="text-xs font-heading font-bold text-brand-text truncate leading-tight">{theme.name}</div>
+                    <div className="text-[10px] font-mono text-brand-muted truncate">{theme.category}</div>
+                  </div>
+                </div>
+
+                <div className="flex items-center gap-2 flex-shrink-0 ml-2">
+                  <div className="flex items-center gap-1">
+                    <span className="w-2.5 h-2.5 rounded-full border border-black/20" style={{ backgroundColor: theme.accentTeal }} />
+                    <span className="w-2.5 h-2.5 rounded-full border border-black/20" style={{ backgroundColor: theme.accentViolet }} />
+                  </div>
+                  {isSelected && (
+                    <div className="w-5 h-5 rounded-full bg-brand-teal/20 flex items-center justify-center text-brand-teal">
+                      <Check className="w-3.5 h-3.5" />
+                    </div>
+                  )}
+                </div>
+              </button>
+            );
+          })}
+        </div>
+      </div>
+    );
+  }
+
+  // Desktop Dropdown
   return (
     <div className="relative inline-block text-left">
-      {/* Theme Toggle Trigger Button */}
       <button
         onClick={() => setIsOpen(!isOpen)}
-        className={`flex items-center gap-2 px-3 py-2 rounded-xl bg-brand-surface border border-brand-border text-brand-text hover:border-brand-teal transition-all active:scale-95 shadow-md ${
-          isMobile ? 'w-full justify-between' : ''
-        }`}
+        className="flex items-center gap-2 px-3 py-2 rounded-xl bg-brand-surface border border-brand-border text-brand-text hover:border-brand-teal transition-all active:scale-95 shadow-md"
         aria-label="Toggle Website Color Theme"
       >
         <div className="flex items-center gap-2">
-          {/* Swatch preview dots */}
           <div className="flex items-center gap-1">
             <span
               className="w-2.5 h-2.5 rounded-full border border-black/20"
@@ -106,11 +159,9 @@ export const ThemeToggle: React.FC<{ isMobile?: boolean }> = ({ isMobile = false
         <Palette className="w-4 h-4 text-brand-teal" />
       </button>
 
-      {/* Theme Options Dropdown Modal */}
       <AnimatePresence>
         {isOpen && (
           <>
-            {/* Backdrop to close dropdown on click outside */}
             <div
               onClick={() => setIsOpen(false)}
               className="fixed inset-0 z-40 bg-black/20 backdrop-blur-[1px]"
@@ -122,11 +173,7 @@ export const ThemeToggle: React.FC<{ isMobile?: boolean }> = ({ isMobile = false
               animate={{ opacity: 1, scale: 1, y: 0 }}
               exit={{ opacity: 0, scale: 0.95, y: -5 }}
               transition={{ duration: 0.2 }}
-              className={`absolute z-50 mt-2 p-3 rounded-2xl bg-brand-surface border border-brand-border shadow-2xl ${
-                isMobile
-                  ? 'left-0 right-0 w-full'
-                  : 'right-0 w-64'
-              }`}
+              className="absolute right-0 z-50 mt-2 w-72 p-3 rounded-2xl bg-brand-surface border border-brand-border shadow-2xl"
             >
               <div className="text-[10px] font-mono text-brand-muted uppercase px-2 mb-2 pb-1 border-b border-brand-border/60 flex items-center justify-between">
                 <span>Select Theme Palette</span>
@@ -148,30 +195,30 @@ export const ThemeToggle: React.FC<{ isMobile?: boolean }> = ({ isMobile = false
                           : 'hover:bg-brand-bg/60 border border-transparent text-brand-text'
                       }`}
                     >
-                      <div className="flex items-center gap-2.5">
-                        {/* Swatch Circle */}
+                      <div className="flex items-center gap-2.5 min-w-0">
                         <div
-                          className="w-5 h-5 rounded-lg flex items-center justify-center border border-brand-border/80 shadow-sm"
+                          className="w-6 h-6 rounded-lg flex items-center justify-center border border-brand-border/80 shadow-sm flex-shrink-0"
                           style={{ backgroundColor: theme.bgHex }}
                         >
-                          <Icon className="w-3 h-3" style={{ color: theme.accentTeal }} />
+                          <Icon className="w-3.5 h-3.5" style={{ color: theme.accentTeal }} />
                         </div>
-                        <div>
-                          <div className="text-xs font-heading font-bold text-brand-text leading-tight">{theme.name}</div>
-                          <div className="text-[10px] font-mono text-brand-muted">{theme.category}</div>
+                        <div className="min-w-0">
+                          <div className="text-xs font-heading font-bold text-brand-text leading-tight truncate">{theme.name}</div>
+                          <div className="text-[10px] font-mono text-brand-muted truncate">{theme.category}</div>
                         </div>
                       </div>
 
-                      {/* Swatch color dots */}
-                      <div className="flex items-center gap-1">
-                        <span
-                          className="w-2.5 h-2.5 rounded-full"
-                          style={{ backgroundColor: theme.accentTeal }}
-                        />
-                        <span
-                          className="w-2.5 h-2.5 rounded-full"
-                          style={{ backgroundColor: theme.accentViolet }}
-                        />
+                      <div className="flex items-center gap-2 flex-shrink-0 ml-2">
+                        <div className="flex items-center gap-1">
+                          <span
+                            className="w-2.5 h-2.5 rounded-full"
+                            style={{ backgroundColor: theme.accentTeal }}
+                          />
+                          <span
+                            className="w-2.5 h-2.5 rounded-full"
+                            style={{ backgroundColor: theme.accentViolet }}
+                          />
+                        </div>
                         {isSelected && <Check className="w-4 h-4 text-brand-teal ml-1" />}
                       </div>
                     </button>
