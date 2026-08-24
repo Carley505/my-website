@@ -1,4 +1,4 @@
-export type ProjectCategory = 'all' | 'automation-ai' | 'data' | 'fullstack' | 'design';
+export type ProjectCategory = 'top' | 'all' | 'automation-ai' | 'data' | 'fullstack' | 'design';
 
 export interface Project {
   id: string;
@@ -8,6 +8,7 @@ export interface Project {
   category: 'automation-ai' | 'data' | 'fullstack' | 'design';
   techStack: string[];
   featured?: boolean;
+  isTopPick?: boolean;
   liveUrl?: string;
   githubUrl?: string;
   behanceUrl?: string;
