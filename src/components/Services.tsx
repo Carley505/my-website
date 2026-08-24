@@ -58,23 +58,23 @@ export const Services: React.FC = () => {
   ];
 
   return (
-    <section id="services" className="py-20 md:py-28 bg-brand-surface/30 border-y border-brand-border/40 relative">
+    <section id="services" className="py-14 sm:py-20 md:py-28 bg-brand-surface/30 border-y border-brand-border/40 relative">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         {/* Header */}
-        <div className="text-center max-w-3xl mx-auto mb-16">
+        <div className="text-center max-w-3xl mx-auto mb-12 sm:mb-16">
           <div className="inline-flex items-center gap-2 px-3 py-1 rounded-md bg-brand-teal/10 text-brand-teal text-xs font-mono mb-3">
             <span>// SERVICES & CONSULTING</span>
           </div>
-          <h2 className="text-3xl sm:text-4xl font-heading font-extrabold text-brand-text mb-4">
+          <h2 className="text-2xl sm:text-4xl font-heading font-extrabold text-brand-text mb-3 leading-tight">
             How I Help Businesses <span className="text-brand-teal">Run Smarter</span>
           </h2>
-          <p className="text-brand-muted text-base">
+          <p className="text-brand-muted text-sm sm:text-base leading-relaxed">
             Fixed-scope consulting, enterprise automation setup, data engine architecture, and custom full-stack web builds.
           </p>
         </div>
 
         {/* Services Grid */}
-        <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
+        <div className="grid grid-cols-1 md:grid-cols-2 gap-6 sm:gap-8">
           {servicesList.map((service, idx) => {
             const Icon = service.icon;
             const waMsg = `Hi Callistus, I'd like to discuss a project regarding: ${service.title}`;
@@ -87,24 +87,24 @@ export const Services: React.FC = () => {
                 whileInView={{ opacity: 1, y: 0 }}
                 viewport={{ once: true }}
                 transition={{ duration: 0.5, delay: idx * 0.1 }}
-                className="p-6 sm:p-8 rounded-2xl bg-brand-surface border border-brand-border hover:border-brand-teal/50 transition-all group flex flex-col justify-between shadow-xl"
+                className="p-5 sm:p-8 rounded-2xl bg-brand-surface border border-brand-border hover:border-brand-teal/50 transition-all group flex flex-col justify-between shadow-xl"
               >
                 <div>
                   <div className="flex items-center gap-3 mb-4">
                     <div
-                      className="p-3 rounded-xl bg-brand-bg text-brand-teal group-hover:scale-110 transition-transform shadow-inner"
+                      className="p-2.5 sm:p-3 rounded-xl bg-brand-bg text-brand-teal group-hover:scale-110 transition-transform shadow-inner flex-shrink-0"
                       style={{ color: service.accentColor }}
                     >
-                      <Icon className="w-6 h-6" />
+                      <Icon className="w-5 h-5 sm:w-6 sm:h-6" />
                     </div>
-                    <h3 className="text-xl font-heading font-bold text-brand-text">{service.title}</h3>
+                    <h3 className="text-lg sm:text-xl font-heading font-bold text-brand-text leading-snug">{service.title}</h3>
                   </div>
 
                   <p className="text-xs sm:text-sm text-brand-muted mb-6 leading-relaxed">
                     {service.description}
                   </p>
 
-                  <ul className="space-y-2 mb-8">
+                  <ul className="space-y-2 mb-6 sm:mb-8">
                     {service.features.map((feat) => (
                       <li key={feat} className="flex items-center gap-2 text-xs font-mono text-brand-text">
                         <ArrowRight className="w-3.5 h-3.5 text-brand-teal flex-shrink-0" />
@@ -118,7 +118,7 @@ export const Services: React.FC = () => {
                   href={waUrl}
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="inline-flex items-center justify-center gap-2 w-full py-3 px-4 rounded-xl bg-brand-bg border border-brand-border hover:border-brand-teal hover:text-brand-teal text-xs font-semibold text-brand-text transition-all group-hover:bg-brand-teal group-hover:text-brand-bg group-hover:border-brand-teal"
+                  className="inline-flex items-center justify-center gap-2 w-full py-3 px-4 rounded-xl bg-brand-bg border border-brand-border hover:border-brand-teal hover:text-brand-teal text-xs font-semibold text-brand-text transition-all active:scale-[0.98] group-hover:bg-brand-teal group-hover:text-brand-bg group-hover:border-brand-teal"
                 >
                   <MessageSquare className="w-4 h-4" />
                   <span>Discuss {service.title.split(' ')[0]} Project</span>

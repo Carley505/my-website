@@ -39,59 +39,61 @@ export const ProjectShowcase: React.FC = () => {
       : projectsData.filter((p) => p.category === activeCategory);
 
   return (
-    <section id="projects" className="py-20 md:py-28 relative">
+    <section id="projects" className="py-14 sm:py-20 md:py-28 relative">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         {/* Section Header */}
-        <div className="flex flex-col md:flex-row md:items-end justify-between mb-12">
+        <div className="flex flex-col md:flex-row md:items-end justify-between mb-8 sm:mb-12">
           <div>
             <div className="inline-flex items-center gap-2 px-3 py-1 rounded-md bg-brand-teal/10 text-brand-teal text-xs font-mono mb-3">
               <span>// FEATURED WORK & PORTFOLIO</span>
             </div>
-            <h2 className="text-3xl sm:text-4xl font-heading font-extrabold text-brand-text">
+            <h2 className="text-2xl sm:text-4xl font-heading font-extrabold text-brand-text leading-tight">
               Engineered Solutions & <span className="text-brand-teal">Deployed Projects</span>
             </h2>
           </div>
-          <p className="text-brand-muted text-sm max-w-md mt-4 md:mt-0">
-            Select a category tab to filter between enterprise automation pipelines, data processing engines, live web applications, and Behance design work.
+          <p className="text-brand-muted text-xs sm:text-sm max-w-md mt-3 md:mt-0 leading-relaxed">
+            Filter between enterprise automation pipelines, data processing engines, live web applications, and Behance design work.
           </p>
         </div>
 
-        {/* Filter Navigation Tabs */}
-        <div className="flex flex-wrap items-center gap-2 mb-10 pb-4 border-b border-brand-border/60">
-          {filterTabs.map((tab) => {
-            const isActive = activeCategory === tab.id;
-            return (
-              <button
-                key={tab.id}
-                onClick={() => setActiveCategory(tab.id)}
-                className={`relative px-4 py-2.5 rounded-xl text-xs sm:text-sm font-medium transition-all flex items-center gap-2 ${
-                  isActive
-                    ? 'text-brand-bg font-semibold shadow-lg'
-                    : 'text-brand-muted hover:text-brand-text hover:bg-brand-surface'
-                }`}
-              >
-                {isActive && (
-                  <motion.div
-                    layoutId="activeTabBadge"
-                    className="absolute inset-0 bg-brand-teal rounded-xl"
-                    transition={{ type: 'spring', stiffness: 400, damping: 30 }}
-                  />
-                )}
-                <span className="relative z-10">{tab.label}</span>
-                <span
-                  className={`relative z-10 text-[10px] font-mono px-2 py-0.5 rounded-full ${
-                    isActive ? 'bg-brand-bg/20 text-brand-bg' : 'bg-brand-bg text-brand-muted'
+        {/* Filter Navigation Tabs - Horizontal Scrollable on Mobile */}
+        <div className="overflow-x-auto no-scrollbar -mx-4 px-4 sm:mx-0 sm:px-0 mb-8 sm:mb-10 pb-3 border-b border-brand-border/60">
+          <div className="flex items-center gap-2 min-w-max">
+            {filterTabs.map((tab) => {
+              const isActive = activeCategory === tab.id;
+              return (
+                <button
+                  key={tab.id}
+                  onClick={() => setActiveCategory(tab.id)}
+                  className={`relative px-3.5 sm:px-4 py-2 sm:py-2.5 rounded-xl text-xs sm:text-sm font-medium transition-all flex items-center gap-2 ${
+                    isActive
+                      ? 'text-brand-bg font-semibold shadow-lg'
+                      : 'text-brand-muted hover:text-brand-text hover:bg-brand-surface'
                   }`}
                 >
-                  {tab.count}
-                </span>
-              </button>
-            );
-          })}
+                  {isActive && (
+                    <motion.div
+                      layoutId="activeTabBadge"
+                      className="absolute inset-0 bg-brand-teal rounded-xl"
+                      transition={{ type: 'spring', stiffness: 400, damping: 30 }}
+                    />
+                  )}
+                  <span className="relative z-10">{tab.label}</span>
+                  <span
+                    className={`relative z-10 text-[10px] font-mono px-2 py-0.5 rounded-full ${
+                      isActive ? 'bg-brand-bg/20 text-brand-bg' : 'bg-brand-bg text-brand-muted'
+                    }`}
+                  >
+                    {tab.count}
+                  </span>
+                </button>
+              );
+            })}
+          </div>
         </div>
 
         {/* Filterable Project Grid */}
-        <motion.div layout className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+        <motion.div layout className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-5 sm:gap-6">
           <AnimatePresence mode="popLayout">
             {filteredProjects.map((project) => (
               <motion.div
