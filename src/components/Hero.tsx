@@ -25,12 +25,14 @@ export const Hero: React.FC = () => {
             className="lg:col-span-7 flex flex-col items-start"
           >
             {/* Live Availability Badge */}
-            <div className="inline-flex items-center gap-2 px-3 py-1.5 rounded-full bg-brand-surface border border-brand-teal/30 text-[11px] sm:text-xs font-mono text-brand-teal mb-4 sm:mb-6 shadow-lg shadow-brand-teal/5 max-w-full">
-              <span className="relative flex h-2 w-2 flex-shrink-0">
+            <div className="inline-flex items-start sm:items-center gap-2 px-3 py-1.5 rounded-xl sm:rounded-full bg-brand-surface border border-brand-teal/30 text-[10.5px] sm:text-xs font-mono text-brand-teal mb-4 sm:mb-6 shadow-lg shadow-brand-teal/5 max-w-full">
+              <span className="relative flex h-2 w-2 flex-shrink-0 mt-1 sm:mt-0">
                 <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-brand-teal opacity-75" />
                 <span className="relative inline-flex rounded-full h-2 w-2 bg-brand-teal" />
               </span>
-              <span className="truncate">Available for Enterprise Automation & AI Roles</span>
+              <span className="leading-tight sm:leading-none text-left">
+                Available for Enterprise Automation &amp; AI Roles
+              </span>
             </div>
 
             {/* Main Name */}

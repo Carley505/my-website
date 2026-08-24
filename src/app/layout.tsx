@@ -28,6 +28,11 @@ export const metadata: Metadata = {
     title: 'Callistus Ngeywa | AI & Data Automation Engineer',
     description: 'AI & Data Automation Engineer • Full-Stack Developer • UI/UX Designer based in Nairobi, Kenya.',
   },
+  icons: {
+    icon: 'icon.svg',
+    shortcut: 'icon.svg',
+    apple: 'icon.svg',
+  },
 };
 
 export default function RootLayout({
@@ -63,6 +68,8 @@ export default function RootLayout({
   return (
     <html lang="en" className="dark">
       <head>
+        <link rel="icon" href="icon.svg" type="image/svg+xml" />
+        <link rel="apple-touch-icon" href="icon.svg" />
         <script
           type="application/ld+json"
           dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
