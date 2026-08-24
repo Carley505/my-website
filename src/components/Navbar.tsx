@@ -4,6 +4,7 @@ import React, { useState, useEffect } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
 import { Menu, X, MessageSquare, Terminal, ArrowUpRight, ChevronRight } from 'lucide-react';
 import { profileData } from '@/data/profile';
+import { ThemeToggle } from './ThemeToggle';
 
 export const Navbar: React.FC = () => {
   const [scrolled, setScrolled] = useState(false);
@@ -78,8 +79,9 @@ export const Navbar: React.FC = () => {
             ))}
           </nav>
 
-          {/* Desktop CTA */}
+          {/* Desktop CTA & Theme Toggle */}
           <div className="hidden md:flex items-center gap-3">
+            <ThemeToggle />
             <a
               href={whatsappUrl}
               target="_blank"
@@ -92,18 +94,20 @@ export const Navbar: React.FC = () => {
             </a>
           </div>
 
-          {/* Mobile Menu Toggle Button */}
-          <button
-            onClick={() => setMobileMenuOpen(true)}
-            className="md:hidden p-2.5 rounded-xl bg-brand-surface border border-brand-border text-brand-text hover:text-brand-teal transition-colors active:scale-95"
-            aria-label="Open Navigation Menu"
-          >
-            <Menu className="w-5 h-5" />
-          </button>
+          {/* Mobile Actions Header */}
+          <div className="flex md:hidden items-center gap-2">
+            <button
+              onClick={() => setMobileMenuOpen(true)}
+              className="p-2.5 rounded-xl bg-brand-surface border border-brand-border text-brand-text hover:text-brand-teal transition-colors active:scale-95"
+              aria-label="Open Navigation Menu"
+            >
+              <Menu className="w-5 h-5" />
+            </button>
+          </div>
         </div>
       </header>
 
-      {/* Mobile Slide-Over Sidebar Drawer (Right side, ~80% width, 100% height) */}
+      {/* Mobile Slide-Over Sidebar Drawer (Right side, ~82% width, 100% height) */}
       <AnimatePresence>
         {mobileMenuOpen && (
           <>
@@ -145,6 +149,12 @@ export const Navbar: React.FC = () => {
                   </button>
                 </div>
 
+                {/* Theme Selector inside Mobile Drawer */}
+                <div className="mb-6">
+                  <div className="text-[10px] font-mono text-brand-muted uppercase mb-2">Color Theme:</div>
+                  <ThemeToggle isMobile={true} />
+                </div>
+
                 {/* Mobile Navigation Links */}
                 <nav className="flex flex-col gap-1.5">
                   {navLinks.map((link) => (
@@ -152,7 +162,7 @@ export const Navbar: React.FC = () => {
                       key={link.name}
                       href={link.href}
                       onClick={() => setMobileMenuOpen(false)}
-                      className="flex items-center justify-between px-4 py-3.5 rounded-xl text-base font-medium text-brand-text hover:bg-brand-bg hover:text-brand-teal border border-transparent hover:border-brand-border/50 transition-all group"
+                      className="flex items-center justify-between px-4 py-3 rounded-xl text-base font-medium text-brand-text hover:bg-brand-bg hover:text-brand-teal border border-transparent hover:border-brand-border/50 transition-all group"
                     >
                       <span>{link.name}</span>
                       <ChevronRight className="w-4 h-4 text-brand-muted group-hover:text-brand-teal group-hover:translate-x-1 transition-all" />

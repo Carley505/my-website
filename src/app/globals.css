@@ -4,28 +4,82 @@
 @tailwind components;
 @tailwind utilities;
 
-:root {
-  --font-space-grotesk: 'Space Grotesk', sans-serif;
-  --font-inter: 'Inter', sans-serif;
-  --font-jetbrains-mono: 'JetBrains Mono', monospace;
+:root,
+html[data-theme="cyber-midnight"] {
+  --bg-primary: #0B0E14;
+  --bg-surface: #131822;
+  --bg-card: #161C2A;
+  --border-color: rgba(255, 255, 255, 0.08);
+  --accent-teal: #22D3B8;
+  --accent-violet: #7C6CF6;
+  --accent-amber: #F5A623;
+  --text-main: #F5F7FA;
+  --text-muted: #9CA6B4;
+  --glow-teal: rgba(34, 211, 184, 0.15);
+  --glow-violet: rgba(124, 108, 246, 0.1);
+  color-scheme: dark;
+}
+
+html[data-theme="neon-matrix"] {
+  --bg-primary: #06090E;
+  --bg-surface: #0D131E;
+  --bg-card: #111A29;
+  --border-color: rgba(16, 185, 129, 0.18);
+  --accent-teal: #10B981;
+  --accent-violet: #06B6D4;
+  --accent-amber: #F59E0B;
+  --text-main: #F0FDF4;
+  --text-muted: #94A3B8;
+  --glow-teal: rgba(16, 185, 129, 0.15);
+  --glow-violet: rgba(6, 182, 212, 0.1);
+  color-scheme: dark;
+}
+
+html[data-theme="obsidian-amber"] {
+  --bg-primary: #0F1117;
+  --bg-surface: #181B24;
+  --bg-card: #1E222F;
+  --border-color: rgba(245, 166, 35, 0.18);
+  --accent-teal: #F5A623;
+  --accent-violet: #FF5370;
+  --accent-amber: #22D3B8;
+  --text-main: #FFFBF5;
+  --text-muted: #A0A6B8;
+  --glow-teal: rgba(245, 166, 35, 0.15);
+  --glow-violet: rgba(255, 83, 112, 0.1);
+  color-scheme: dark;
+}
+
+html[data-theme="clean-slate-light"] {
+  --bg-primary: #F8FAFC;
+  --bg-surface: #FFFFFF;
+  --bg-card: #F1F5F9;
+  --border-color: rgba(0, 0, 0, 0.08);
+  --accent-teal: #0D9488;
+  --accent-violet: #6366F1;
+  --accent-amber: #D97706;
+  --text-main: #0F172A;
+  --text-muted: #64748B;
+  --glow-teal: rgba(13, 148, 136, 0.1);
+  --glow-violet: rgba(99, 102, 241, 0.08);
+  color-scheme: light;
 }
 
 html {
   scroll-behavior: smooth;
-  color-scheme: dark;
 }
 
 body {
-  background-color: #0B0E14;
-  color: #F5F7FA;
-  font-family: var(--font-inter);
+  background-color: var(--bg-primary);
+  color: var(--text-main);
+  font-family: var(--font-inter), sans-serif;
   overflow-x: hidden;
-  selection-background-color: rgba(34, 211, 184, 0.3);
+  transition: background-color 0.3s ease, color 0.3s ease;
 }
 
 ::selection {
-  background-color: rgba(34, 211, 184, 0.3);
-  color: #ffffff;
+  background-color: var(--glow-teal);
+  color: var(--text-main);
 }
 
 /* Custom Scrollbar */
@@ -34,14 +88,24 @@ body {
 }
 
 ::-webkit-scrollbar-track {
-  background: #0B0E14;
+  background: var(--bg-primary);
 }
 
 ::-webkit-scrollbar-thumb {
-  background: #1F293D;
+  background: var(--bg-surface);
+  border: 1px solid var(--border-color);
   border-radius: 4px;
 }
 
 ::-webkit-scrollbar-thumb:hover {
-  background: #22D3B8;
+  background: var(--accent-teal);
+}
+
+/* Utility Class for Hide Scrollbar on Mobile Tabs */
+.no-scrollbar::-webkit-scrollbar {
+  display: none;
+}
+.no-scrollbar {
+  -ms-overflow-style: none;
+  scrollbar-width: none;
 }
