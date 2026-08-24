@@ -2,7 +2,7 @@
 
 import React, { useState, useEffect } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
-import { Palette, Check, Moon, Sun, Terminal } from 'lucide-react';
+import { Palette, Check, Moon, Sun, Terminal, ChevronDown } from 'lucide-react';
 
 export type ThemeId = 'cyber-midnight' | 'neon-matrix' | 'obsidian-amber' | 'clean-slate-light';
 
@@ -79,58 +79,108 @@ export const ThemeToggle: React.FC<{ isMobile?: boolean }> = ({ isMobile = false
 
   const activeThemeObj = themeOptions.find((t) => t.id === currentTheme) || themeOptions[0];
 
-  // Mobile Drawer Embedded Layout (Spacious, zero clipping, perfect checkmark alignment)
+  // Mobile Drawer Collapsible Layout (Closed by default, expands on click, spacious layout)
   if (isMobile) {
     return (
-      <div className="w-full space-y-2 bg-brand-bg/40 p-3 rounded-2xl border border-brand-border/80">
-        <div className="flex items-center justify-between px-1 mb-1">
-          <span className="text-[10px] font-mono text-brand-muted uppercase tracking-wider">Select Theme Palette</span>
-          <span className="text-[10px] font-mono text-brand-teal font-bold px-1.5 py-0.5 rounded bg-brand-teal/10">4 Themes</span>
-        </div>
+      <div className="w-full">
+        {/* Trigger Button - Collapsed state */}
+        <button
+          onClick={() => setIsOpen(!isOpen)}
+          className="w-full flex items-center justify-between p-3 rounded-xl bg-brand-bg/60 border border-brand-border hover:border-brand-teal/60 text-brand-text transition-all active:scale-[0.99]"
+          aria-label="Toggle Theme Selector"
+        >
+          <div className="flex items-center gap-2.5">
+            <div className="flex items-center gap-1">
+              <span
+                className="w-2.5 h-2.5 rounded-full border border-black/20"
+                style={{ backgroundColor: activeThemeObj.accentTeal }}
+              />
+              <span
+                className="w-2.5 h-2.5 rounded-full border border-black/20"
+                style={{ backgroundColor: activeThemeObj.accentViolet }}
+              />
+            </div>
+            <div className="text-left">
+              <div className="text-xs font-heading font-bold text-brand-text">{activeThemeObj.name}</div>
+              <div className="text-[10px] font-mono text-brand-muted">{activeThemeObj.category}</div>
+            </div>
+          </div>
 
-        <div className="space-y-1.5">
-          {themeOptions.map((theme) => {
-            const isSelected = currentTheme === theme.id;
-            const Icon = theme.icon;
+          <div className="flex items-center gap-1.5 text-brand-teal">
+            <span className="text-[10px] font-mono font-medium">Change Theme</span>
+            <ChevronDown
+              className={`w-4 h-4 transition-transform duration-200 ${isOpen ? 'rotate-180' : ''}`}
+            />
+          </div>
+        </button>
 
-            return (
-              <button
-                key={theme.id}
-                onClick={() => handleSelectTheme(theme.id)}
-                className={`w-full flex items-center justify-between p-2.5 rounded-xl text-left transition-all ${
-                  isSelected
-                    ? 'bg-brand-surface border border-brand-teal text-brand-teal font-semibold shadow-md'
-                    : 'bg-brand-surface/40 hover:bg-brand-surface border border-brand-border/40 text-brand-text'
-                }`}
-              >
-                <div className="flex items-center gap-2.5 min-w-0">
-                  <div
-                    className="w-7 h-7 rounded-lg flex items-center justify-center border border-brand-border/80 shadow-sm flex-shrink-0"
-                    style={{ backgroundColor: theme.bgHex }}
-                  >
-                    <Icon className="w-3.5 h-3.5" style={{ color: theme.accentTeal }} />
-                  </div>
-                  <div className="min-w-0">
-                    <div className="text-xs font-heading font-bold text-brand-text truncate leading-tight">{theme.name}</div>
-                    <div className="text-[10px] font-mono text-brand-muted truncate">{theme.category}</div>
-                  </div>
+        {/* Expandable Theme Picker Panel */}
+        <AnimatePresence>
+          {isOpen && (
+            <motion.div
+              initial={{ opacity: 0, height: 0 }}
+              animate={{ opacity: 1, height: 'auto' }}
+              exit={{ opacity: 0, height: 0 }}
+              transition={{ duration: 0.25, ease: 'easeInOut' }}
+              className="overflow-hidden mt-2"
+            >
+              <div className="w-full space-y-1.5 bg-brand-bg/80 p-2.5 rounded-2xl border border-brand-border/80 shadow-xl">
+                <div className="flex items-center justify-between px-1 py-1 text-[10px] font-mono text-brand-muted uppercase">
+                  <span>Select Theme Palette</span>
+                  <span className="text-brand-teal font-bold">4 Themes</span>
                 </div>
 
-                <div className="flex items-center gap-2 flex-shrink-0 ml-2">
-                  <div className="flex items-center gap-1">
-                    <span className="w-2.5 h-2.5 rounded-full border border-black/20" style={{ backgroundColor: theme.accentTeal }} />
-                    <span className="w-2.5 h-2.5 rounded-full border border-black/20" style={{ backgroundColor: theme.accentViolet }} />
-                  </div>
-                  {isSelected && (
-                    <div className="w-5 h-5 rounded-full bg-brand-teal/20 flex items-center justify-center text-brand-teal">
-                      <Check className="w-3.5 h-3.5" />
-                    </div>
-                  )}
-                </div>
-              </button>
-            );
-          })}
-        </div>
+                {themeOptions.map((theme) => {
+                  const isSelected = currentTheme === theme.id;
+                  const Icon = theme.icon;
+
+                  return (
+                    <button
+                      key={theme.id}
+                      onClick={() => handleSelectTheme(theme.id)}
+                      className={`w-full flex items-center justify-between p-2.5 rounded-xl text-left transition-all ${
+                        isSelected
+                          ? 'bg-brand-surface border border-brand-teal text-brand-teal font-semibold shadow-md'
+                          : 'bg-brand-surface/40 hover:bg-brand-surface border border-brand-border/40 text-brand-text'
+                      }`}
+                    >
+                      <div className="flex items-center gap-2.5 min-w-0">
+                        <div
+                          className="w-7 h-7 rounded-lg flex items-center justify-center border border-brand-border/80 shadow-sm flex-shrink-0"
+                          style={{ backgroundColor: theme.bgHex }}
+                        >
+                          <Icon className="w-3.5 h-3.5" style={{ color: theme.accentTeal }} />
+                        </div>
+                        <div className="min-w-0">
+                          <div className="text-xs font-heading font-bold text-brand-text truncate leading-tight">{theme.name}</div>
+                          <div className="text-[10px] font-mono text-brand-muted truncate">{theme.category}</div>
+                        </div>
+                      </div>
+
+                      <div className="flex items-center gap-2 flex-shrink-0 ml-2">
+                        <div className="flex items-center gap-1">
+                          <span
+                            className="w-2.5 h-2.5 rounded-full border border-black/20"
+                            style={{ backgroundColor: theme.accentTeal }}
+                          />
+                          <span
+                            className="w-2.5 h-2.5 rounded-full border border-black/20"
+                            style={{ backgroundColor: theme.accentViolet }}
+                          />
+                        </div>
+                        {isSelected && (
+                          <div className="w-5 h-5 rounded-full bg-brand-teal/20 flex items-center justify-center text-brand-teal">
+                            <Check className="w-3.5 h-3.5" />
+                          </div>
+                        )}
+                      </div>
+                    </button>
+                  );
+                })}
+              </div>
+            </motion.div>
+          )}
+        </AnimatePresence>
       </div>
     );
   }
