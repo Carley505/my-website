@@ -84,7 +84,7 @@ export const Hero: React.FC = () => {
               </a>
 
               <a
-                href="/assets/Callistus_Ngeywa_Resume.pdf"
+                href="assets/Callistus_Ngeywa_Resume.pdf"
                 download
                 className="flex items-center justify-center gap-2 px-5 py-3.5 text-sm font-medium text-brand-muted hover:text-brand-text hover:bg-brand-surface rounded-xl transition-all w-full sm:w-auto active:scale-[0.98]"
               >
