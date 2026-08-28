@@ -9,10 +9,10 @@ import { ProjectCard } from './ProjectCard';
 import { ArrowRight, Sparkles, Layers } from 'lucide-react';
 
 interface ProjectShowcaseProps {
-  limitMax5?: boolean;
+  limitMax6?: boolean;
 }
 
-export const ProjectShowcase: React.FC<ProjectShowcaseProps> = ({ limitMax5 = true }) => {
+export const ProjectShowcase: React.FC<ProjectShowcaseProps> = ({ limitMax6 = true }) => {
   const [activeCategory, setActiveCategory] = useState<ProjectCategory>('top');
 
   const filterTabs: { id: ProjectCategory; label: string; count: number }[] = [
@@ -51,8 +51,8 @@ export const ProjectShowcase: React.FC<ProjectShowcaseProps> = ({ limitMax5 = tr
       ? projectsData
       : projectsData.filter((p) => p.category === activeCategory);
 
-  // Apply maximum 5 limit on homepage showcase
-  const displayedProjects = limitMax5 ? categoryProjects.slice(0, 5) : categoryProjects;
+  // Apply maximum 6 limit on homepage showcase
+  const displayedProjects = limitMax6 ? categoryProjects.slice(0, 6) : categoryProjects;
 
   return (
     <section id="projects" className="py-14 sm:py-20 md:py-28 relative">
@@ -69,7 +69,7 @@ export const ProjectShowcase: React.FC<ProjectShowcaseProps> = ({ limitMax5 = tr
             </h2>
           </div>
           <p className="text-brand-muted text-xs sm:text-sm max-w-md mt-3 md:mt-0 leading-relaxed">
-            Preview my top 5 featured automation systems, data engines, and web platforms. Explore the full catalog below.
+            Preview my top 6 featured automation systems, data engines, and web platforms. Explore the full catalog below.
           </p>
         </div>
 
@@ -128,7 +128,7 @@ export const ProjectShowcase: React.FC<ProjectShowcaseProps> = ({ limitMax5 = tr
         </motion.div>
 
         {/* Bottom CTA to Open All Projects Page */}
-        {limitMax5 && (
+        {limitMax6 && (
           <div className="mt-12 sm:mt-16 text-center">
             <Link
               href="/projects"
