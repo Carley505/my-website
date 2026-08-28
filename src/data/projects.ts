@@ -34,7 +34,7 @@ export const projectsData: Project[] = [
     featured: true,
     isTopPick: true,
     techStack: ['Python FastAPI', 'Chroma DB', 'MongoDB', 'React + Vite', 'Tailwind CSS', 'Firebase Auth'],
-    liveUrl: 'http://healthbridge-ai.netlify.app/',
+    liveUrl: 'https://health-bridge-ai-lime.vercel.app/',
     behanceUrl: 'https://www.behance.net/gallery/248621063/HealthBridge-AI',
     badge: 'Full-Stack AI Project',
   },
