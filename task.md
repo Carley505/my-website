@@ -134,7 +134,7 @@ Filter Tabs: `All` | `Automation & AI` | `Data Engineering` | `Full-Stack Web` |
     *   **Type:** AI Application & UI Case Study
     *   **Description:** Comprehensive AI health assistant platform for Diabetes and Hypertension risk assessment and management. Features FastAPI backend, Chroma DB vector search, MongoDB, React front-end, and Firebase Auth.
     *   **Tech Tags:** `Python FastAPI`, `Chroma DB`, `MongoDB`, `React`, `Tailwind CSS`, `Firebase`
-    *   **Links:** [Live Demo](http://healthbridge-ai.netlify.app/) | [Behance Case Study](https://www.behance.net/gallery/248621063/HealthBridge-AI)
+    *   **Links:** [Live Demo](https://health-bridge-ai-lime.vercel.app/) | [Behance Case Study](https://www.behance.net/gallery/248621063/HealthBridge-AI)
 
 6.  **Bagha Pet Store**
     *   **Category:** `Full-Stack Web`
@@ -272,7 +272,7 @@ Antigravity conducted an audit of your current CV (`Callistus Ngeywa - Resume.pd
 ## 6. Verification & Quality Assurance Checklist
 
 - [x] All GitHub repositories verified (`monday-n8n-automations`, `excel-powerquery-time-compliance`, `Chef-Royale`, `rara-in-the-kitchen`, `aria-noire-scents`, `Everything_by_v`, `MetaCrypto`, `Nairobi-Run-Buddy`, `droid-technician`, `toby-s-grill`).
-- [x] All live web links tested and verified responsive (`bagha-pet-store.vercel.app`, `chef-royale.vercel.app`, `toby-s-grill.vercel.app`, `rara-in-the-kitchen.vercel.app`, `aria-noire-scents-he17.vercel.app`, `everything-by-v.vercel.app`, `tt-tradersz.vercel.app`, `healthbridge-ai.netlify.app`).
+- [x] All live web links tested and verified responsive (`bagha-pet-store.vercel.app`, `chef-royale.vercel.app`, `toby-s-grill.vercel.app`, `rara-in-the-kitchen.vercel.app`, `aria-noire-scents-he17.vercel.app`, `everything-by-v.vercel.app`, `tt-tradersz.vercel.app`, `health-bridge-ai-lime.vercel.app`).
 - [x] All Behance links verified (`canon505` profile, HealthBridge-AI, Poster Design, Mandala Designs, PROTO BRANDING).
 - [x] WhatsApp link configured with pre-filled message for phone `+254759319378`.
 - [x] `task.md` spec formatted for direct execution by Antigravity AI build agent.
