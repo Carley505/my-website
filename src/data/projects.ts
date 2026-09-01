@@ -174,8 +174,9 @@ export const projectsData: Project[] = [
     category: 'fullstack',
     featured: false,
     techStack: ['React', 'Node.js', 'Geolocation API', 'Tailwind CSS'],
+    liveUrl: 'https://carley505.github.io/Nairobi-Run-Buddy/',
     githubUrl: 'https://github.com/Carley505/Nairobi-Run-Buddy',
-    badge: 'Code Repository',
+    badge: 'Live Web App',
   },
   {
     id: 'droid-technician',
@@ -185,8 +186,9 @@ export const projectsData: Project[] = [
     category: 'fullstack',
     featured: false,
     techStack: ['React', 'Node.js', 'Express', 'Tailwind CSS'],
+    liveUrl: 'http://carley505.github.io/droid-technician',
     githubUrl: 'https://github.com/Carley505/droid-technician',
-    badge: 'Code Repository',
+    badge: 'Live Web App',
   },
   {
     id: 'branding-poster-design',
